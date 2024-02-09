@@ -1,9 +1,9 @@
 package org.example;
 
-import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.session.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -15,7 +15,7 @@ public class Bot extends ListenerAdapter {
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
     @Override
-    public void onReady(ReadyEvent event) {
+    public void onReady(@NotNull ReadyEvent event) {
         scheduler.scheduleAtFixedRate(() -> {
             sendMessageIfScheduledTime(event.getJDA().getTextChannelById("1205540996159373315"), Calendar.TUESDAY, 14, 30, "Ваше сообщение для вторника в 14:30");
             sendMessageIfScheduledTime(event.getJDA().getTextChannelById("1205540996159373315"), Calendar.THURSDAY, 18, 30, "Ваше сообщение для четверга в 18:30");
