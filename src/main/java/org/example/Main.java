@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Bot bot = new Bot();
         //Так делать не надо но мне похуй
-        String token = "MTIwNTU0MDE5NDkwMDc3MDg4Nw.GrYsHa.Yd7SrKaQ6adRGhPJnUdQ1jZuekjRt4mwwklKBY";
+        String token = "Поставь свой токен";
 
         JDABuilder.createLight(token)
                 .addEventListeners(bot)
